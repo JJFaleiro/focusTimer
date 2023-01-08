@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --base-color: 194;
+
+  --bg-body: #121214;
+  --bg-control: hsla(var(--base-color), 100%, 63%, 0.13);
+
+  --tt-timer: #ffffff;
+
+  --c-button-blue: hsl(var(--base-color), 100%, 63%);
+  --c-button-white: #ffffff;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  background-color: var(--bg-body);
+  color: var(--tt-timer);
+
+  min-height: 100vh;
+
+  display: grid; /*Libera os atributos self (estudar sobre)*/
+}
+
+main {
+  justify-self: center; /*Justifique a si mesmo no centro*/
+  align-self: end; /*Estou alinhando no final do main - Ou seja no limite do main para o footer*/
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+#timer {
+  display: flex;
+
+  font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+
+  margin-bottom: 1.6rem;
+}
+
+#controls {
+  background-color: var(--bg-control);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3.2rem;
+  padding: 2.2rem 4rem;
+  border-radius: 9999px; /*Borda pill (pilula)*/
+
+  width: clamp(
+    10rem,
+    10rem + 30vw,
+    22.8rem
+  ); /* o atributo clamp serve para otimizar a responsividade para não ter que usar media queries toda hora - 1º Minimo - 2º Ideal - 3º Máximo*/
+
+  height: clamp(
+    8rem,
+    5rem + 10vw,
+    10.8rem
+  ); /*Importante perceber que estou colocando para ele aumentar ou diminuir de tamanho de acordo com a largura (vw - viewport width)*/
+}
+
+button {
+  background-color: transparent; /*Colocar a cor de fundo transparente*/
+  border: none;
+
+  cursor: pointer;
+}
+
+button svg {
+  width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
+}
+
+.play svg path,
+.pause svg path,
+.sound-on svg path {
+  fill: var(
+    --c-button-blue
+  ); /*Acessamos o path e alteramos a tributo fill que estava dentro do path do svg*/
+}
+
+footer {
+  justify-self: end; /*No final da largura*/
+  align-self: end; /*No final da altura da caixo do footer*/
+
+  padding: 0 4rem 3.2rem 0; /*Prenchimento da caixa para fazer o espaçamentos do button sem usar o margin*/
+}

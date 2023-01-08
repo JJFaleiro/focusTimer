@@ -1,0 +1,1 @@
+### As vezes para verificar um erro na aplicação - comente onde você acha que está o erro e veja se o erro persiste (pois assim você consiguira identificar se realmente é aquela parte do código que está com o erro)
